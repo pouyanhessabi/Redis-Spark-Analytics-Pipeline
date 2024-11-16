@@ -30,6 +30,6 @@ Image of the API: <br>
 
 An API that get a key and returns all cities from Redis; the JSON response is returned. <br>
 Image of the API: <br>
-![Postman get cities](https://github.com/pouyanhessabi/Redis-Spark-Analytics-Pipeline/blob/main/Report/pic/Postman%20get-city.jpg)
+![Postman get cities](https://github.com/pouyanhessabi/Redis-Spark-Analytics-Pipeline/blob/main/Report/pic/Postman%20get-cities.jpg)
 
 # Part 2: Batch Analytics Processing
