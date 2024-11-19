@@ -1,5 +1,6 @@
 A simple data engineering task. This project implements a comprehensive data engineering pipeline that combines
-real-time data storage and batch analytics processing.
+real-time data storage and batch analytics processing. <br>
+Implementation Technologies: ***Python, Flask, Redis, Docker, Spark***
 
 # Part 1: Real-time Data Storage
 
@@ -32,4 +33,12 @@ An API that get a key and returns all cities from Redis; the JSON response is re
 Image of the API: <br>
 ![Postman get cities](https://github.com/pouyanhessabi/Redis-Spark-Analytics-Pipeline/blob/main/Report/pic/Postman%20get-cities.jpg)
 
-# Part 2: Batch Analytics Processing
+# Part 2: Analytics Reports
+
+Batch Analytics Processing: create the requested analytical reports using Apache Spark and store the analysis outputs as
+files in MinIO. <br>
+
+## Step 1: Setup Spark with Docker:
+
+``` docker pull apache/spark-py ```<br>
+
