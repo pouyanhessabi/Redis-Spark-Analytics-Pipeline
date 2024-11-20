@@ -38,7 +38,26 @@ Image of the API: <br>
 Batch Analytics Processing: create the requested analytical reports using Apache Spark and store the analysis outputs as
 files in MinIO. <br>
 
-## Step 1: Setup Spark with Docker:
+## Step 1: Setup Docker:
 
-``` docker pull apache/spark-py ```<br>
+In the first part, we set up the Docker environment for the redis database, now we want to implement and refactor the
+docker environment for the redis, flask, spark, and minio application. <br>
+
+``` docker network create data_engineering_network```: create the docker network <br>
+***Redis***: <br>
+``` docker pull redis```: set up Redis <br>
+```docker run --name redis-container --network data_engineering_network -d redis```: run <br>
+
+***Spark***: <br>
+```docker pull bitnami/spark```: set up Spark <br>
+```docker run --name spark-master --network data_engineering_network -d bitnami/spark spark-shell```: run <br>
+
+***MinIO***: <br>
+```docker pull minio/minio```: set up Minio <br>
+```docker run --name minio-container --network data_engineering_network -d -p 9000:9000 -p 9001:9001 -e "MINIO_ROOT_USER=pouyan" -e "MINIO_ROOT_PASSWORD=12345678" minio/minio server /data --console-address ":9001"```:
+run <br>
+***Flask***: <br>
+Create ```Dockerfile```.<br>
+***Add ```requirements.txt```***: <br>
+***Add ```docker-compose.yml```***: for each container: redis, spark, minio, flask<br>
 

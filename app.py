@@ -33,5 +33,10 @@ def get_cities(country_code):
     return jsonify({"country_code": country_code, "cities": list(cities)}), 200
 
 
+@app.route('/', methods=['GET'])
+def index():
+    return "App is running"
+
+
 if __name__ == '__main__':
     app.run(debug=True)

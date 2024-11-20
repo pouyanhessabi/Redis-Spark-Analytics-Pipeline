@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis
+    container_name: redis-container
+    networks:
+      - data_engineering_network
+    ports:
+      - "6379:6379"
+
+  minio:
+    image: minio/minio
+    container_name: minio-container
+    networks:
+      - data_engineering_network
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: pouyan
+      MINIO_ROOT_PASSWORD: 123
+    command: server /data --console-address ":9001"
+
+  flask-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flask-app
+    networks:
+      - data_engineering_network
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+
+  spark:
+    image: bitnami/spark
+    container_name: spark
+    networks:
+      - data_engineering_network
+    ports:
+      - "8080:8080"
+
+networks:
+  data_engineering_network:
+    driver: bridge
