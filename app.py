@@ -4,7 +4,7 @@ import redis
 app = Flask(__name__)
 
 # Connect to Redis
-redis_client = redis.StrictRedis(host='localhost', port=6379, decode_responses=True)
+redis_client = redis.StrictRedis(host='redis', port=6379, decode_responses=True)
 
 
 @app.route('/add-city', methods=['POST'])
@@ -33,10 +33,10 @@ def get_cities(country_code):
     return jsonify({"country_code": country_code, "cities": list(cities)}), 200
 
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def index():
     return "App is running"
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)

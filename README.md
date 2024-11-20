@@ -2,6 +2,15 @@ A simple data engineering task. This project implements a comprehensive data eng
 real-time data storage and batch analytics processing. <br>
 Implementation Technologies: ***Python, Flask, Redis, Docker, Spark***
 
+# Table of Content:
+
+[Part one: Real-time Data Storage](#part-1-real-time-data-storage) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[1: Install Redis database using docker](#step-1-install-redis-database-using-docker) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[2: Add cities to redis database](#step-2-add-cities-to-redis-database)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[3: Get cities from redis database](#step-3-get-cities-from-redis-database)<br>
+[Part two: Analytics Reports](#part-2-analytics-reports) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;[1: Setup Docker](#step-1-setup-docker)<br>
+
 # Part 1: Real-time Data Storage
 
 Install Redis database using docker, Implement one API for storage and one API for retrieving data from redis database
@@ -58,6 +67,7 @@ docker environment for the redis, flask, spark, and minio application. <br>
 run <br>
 ***Flask***: <br>
 Create ```Dockerfile```.<br>
-***Add ```requirements.txt```***: <br>
+***Add ```requirements.txt```*** <br>
 ***Add ```docker-compose.yml```***: for each container: redis, spark, minio, flask<br>
 
+## Step 2
